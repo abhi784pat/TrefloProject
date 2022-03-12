@@ -8,7 +8,7 @@ const AvailableMeals = (props) => {
   const [meals, setMeals] = useState([]);
   const [isloading, setIsloading] = useState(true);
   const [httperror, setHttperror] = useState(null);
-  const [veg, setVeg] = useState(null);
+  const [veg, setVeg] = useState(false);
   const [filter, setFilter] = useState("");
   const [filterResult, setFilterResult] = useState([]);
 
@@ -44,6 +44,7 @@ const AvailableMeals = (props) => {
     setFilter(filterstring);
     if (filterstring !== "") {
       if (filterstring === "high") {
+        console.log("hi");
         let listdatan =
           veg === false
             ? meals.sort((a, b) => (a.price > b.price ? -1 : 1))
